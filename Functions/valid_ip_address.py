@@ -23,7 +23,7 @@ def is_valid_ipv4(ip_address):
 ## Example usecase
 def get_valid_ipv4_address():
     while True:
-        device_ip = string(input("Enter an IPv4 address to program into your device: "))
+        device_ip = input("Enter an IPv4 address to program into your device: ")
         if is_valid_ipv4(device_ip) == True:
             print(f"{device_ip} is a valid address and is being programmed.")
             return device_ip
