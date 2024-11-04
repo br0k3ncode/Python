@@ -5,7 +5,7 @@
 def is_valid_ipv4(ip_address):
     # Splits ip address into octets at "."
     octets = ip_address.split('.')
-    # Checks there are 4 octets
+    # Checks there are exactly 4 octets
     if len(octets) == 4:
     # Iterates through the octets
         for octet in octets:
@@ -14,9 +14,12 @@ def is_valid_ipv4(ip_address):
             if (octet.isdigit() and 0 <= int(octet) <= 255):
                 # If each octet is in parameters, script will continue.
                 continue
-        # If the ip_address does not meet all conditions above, the function returns False
+            # If the ip_address does not meet all conditions above, the function returns False
             else:
                 return False
+    # Action if octets doesn't equal 4
+    else:
+        return False
     # If all conditions above are met, return True.
     return True
 
